@@ -4,7 +4,7 @@ import { Button } from 'components/button';
 import styles from './ArticleParamsForm.module.scss';
 import { SyntheticEvent, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { useOutsideClickClose } from '../select/hooks/useOutsideClickClose';
+
 import {
 	ArticleStateType,
 	OptionType,
@@ -19,6 +19,7 @@ import { Select } from '../select';
 import { RadioGroup } from '../radio-group';
 import { Text } from '../text';
 import { Separator } from '../separator';
+import { useOutsideClickClose } from '../select/hooks/useOutsideClickClose';
 
 type ArticleParamsFormProprs = {
 	currentArticleState: ArticleStateType;
@@ -40,6 +41,7 @@ export const ArticleParamsForm = ({
 	const [newFontSize,setNewFontSize]=useState<OptionType>(currentArticleState.fontSizeOption)
 	const [newBackgroundColor,setNewBackgroundColor] = useState<OptionType>(currentArticleState.backgroundColor)
 	const [newContentWidth,setNewContentWidth] = useState<OptionType>(currentArticleState.contentWidth)
+
 	useOutsideClickClose({
 		isOpen,
 		rootRef,
